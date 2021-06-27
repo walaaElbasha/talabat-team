@@ -267,6 +267,7 @@ class ViewCopouns extends React.Component {
           },
         }
       );
+      window.location.href="/copouns"
     }
     this.state.refresh = true;
     this.setState({ refresh: this.state.refresh });
