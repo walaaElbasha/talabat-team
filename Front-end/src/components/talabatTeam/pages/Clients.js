@@ -66,7 +66,7 @@ class Clients extends React.Component {
     }
     this.setState({ clients: this.state.clients });
       if (window.confirm("Are you sure?")) {
-      fetch("http://127.0.0.1:8000/user/" + clientId, {
+      fetch("http://127.0.0.1:8001/user/" + clientId, {
           method: "DELETE",
           headers: {
             Accept: "application/json",
@@ -79,7 +79,7 @@ class Clients extends React.Component {
 
   async componentWillMount() {
     this.setState({ loading: true });
-    let res = await fetch("http://127.0.0.1:8000/user", {
+    let res = await fetch("http://127.0.0.1:8001/user", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -111,7 +111,7 @@ class Clients extends React.Component {
     console.log(this.state.status);
     fd.append("status", this.state.status);
     axios
-      .put("http://127.0.0.1:8000/user/profile/"+clientId, {
+      .put("http://127.0.0.1:8001/user/profile/"+clientId, {
         status: this.state.status,
       })
       .then((res) => {

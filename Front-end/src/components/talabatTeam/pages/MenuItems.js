@@ -11,11 +11,11 @@ class MenuItems extends React.Component {
     }
 
 
-  //  http://127.0.0.1:8000/restaurant/60d60bcf76b7c03cfed9afed/food
+  //  http://127.0.0.1:8001/restaurant/60d60bcf76b7c03cfed9afed/food
 
   async componentWillMount() {
    
-    let res = await fetch(`http://127.0.0.1:8000/restaurant/${this.props.match.params.resId}/food`, {
+    let res = await fetch(`http://127.0.0.1:8001/restaurant/${this.props.match.params.resId}/food`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ class MenuItems extends React.Component {
     });
     //console.log(resJson);
 
-    let response = await fetch(`http://127.0.0.1:8000/restaurants/${this.props.match.params.resId}`, {
+    let response = await fetch(`http://127.0.0.1:8001/restaurants/${this.props.match.params.resId}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -82,7 +82,7 @@ class MenuItems extends React.Component {
          
               <div class="row" style={{fontSize:"30px" }}>
              <div class="col-4">
-                <img src={`http://localhost:8000/${item.img}`} style={{width:"80px", height:"80px"}} />
+                <img src={`http://localhost:8001/${item.img}`} style={{width:"80px", height:"80px"}} />
           
                  
                {item.name}

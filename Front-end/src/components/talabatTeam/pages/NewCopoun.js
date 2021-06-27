@@ -61,7 +61,7 @@ class NewCopoun extends React.Component {
 
   async componentWillMount() {
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/" + this.props.match.params.id,
+      "http://127.0.0.1:8001/restaurants/" + this.props.match.params.id,
       {
         method: "GET",
         headers: {
@@ -129,7 +129,7 @@ class NewCopoun extends React.Component {
   async addCopounToDB() {
 
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/copoun/",
+      "http://127.0.0.1:8001/restaurants/copoun/",
 
       {
         method: "POST",

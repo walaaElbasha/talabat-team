@@ -20,7 +20,7 @@ class EditOffer extends React.Component{
   async componentDidMount() {
     console.log("component did mount");
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/offer/singleOffer/" + this.props.match.params.offerId,
+      "http://127.0.0.1:8001/restaurants/offer/singleOffer/" + this.props.match.params.offerId,
       {
         method: "GET",
         headers: {
@@ -36,7 +36,7 @@ class EditOffer extends React.Component{
 
 
      let response = await fetch(
-      "http://127.0.0.1:8000/restaurants/" + this.props.match.params.resId,
+      "http://127.0.0.1:8001/restaurants/" + this.props.match.params.resId,
       {
         method: "GET",
         headers: {
@@ -64,7 +64,7 @@ fd.append("price", this.state.offerPrice);
 fd.append("img", this.state.offerImg, this.state.offerImg.name);
 axios
   .put(
-    "http://127.0.0.1:8000/restaurants/offer/singleOffer/"+this.props.match.params.offerId,fd
+    "http://127.0.0.1:8001/restaurants/offer/singleOffer/"+this.props.match.params.offerId,fd
   )
   .then((res) => {
     console.log(res);
@@ -110,7 +110,7 @@ axios
                     <div className="row">
                       <div className="col-6">
                         <img
-                          src={`http://localhost:8000/${singleOffer.img}`}
+                          src={`http://localhost:8001/${singleOffer.img}`}
                           style={{ width: "120px", height: "120px" }}
                         ></img>
                       

@@ -18,7 +18,7 @@ class EditCopoun extends React.Component{
   async componentDidMount() {
     console.log("component did mount");
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/copoun/singleCopoun/" + this.props.match.params.copounId,
+      "http://127.0.0.1:8001/restaurants/copoun/singleCopoun/" + this.props.match.params.copounId,
       {
         method: "GET",
         headers: {
@@ -34,7 +34,7 @@ class EditCopoun extends React.Component{
 
 
      let response = await fetch(
-      "http://127.0.0.1:8000/restaurants/" + this.props.match.params.resId,
+      "http://127.0.0.1:8001/restaurants/" + this.props.match.params.resId,
       {
         method: "GET",
         headers: {
@@ -62,7 +62,7 @@ fd.append("price", this.state.copounDiscount);
 fd.append("limit",  this.state.copounLimit);
 axios
   .put(
-    "http://127.0.0.1:8000/restaurants/copoun/singleCopoun/"+this.props.match.params.copounId,fd
+    "http://127.0.0.1:8001/restaurants/copoun/singleCopoun/"+this.props.match.params.copounId,fd
   )
   .then((res) => {
     console.log(res);

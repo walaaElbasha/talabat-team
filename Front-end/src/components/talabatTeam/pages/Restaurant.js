@@ -42,7 +42,7 @@ class Restaurant extends React.Component {
   deleteRes = (resId) => {
     console.log(resId);
     if (window.confirm("Are you sure?")) {
-      fetch("http://127.0.0.1:8000/restaurants/" + resId, {
+      fetch("http://127.0.0.1:8001/restaurants/" + resId, {
         method: "DELETE",
         headers: {
           Accept: "application/json",
@@ -57,7 +57,7 @@ class Restaurant extends React.Component {
 
   async componentWillMount() {
     this.setState({ loading: true });
-    let res = await fetch("http://127.0.0.1:8000/restaurants", {
+    let res = await fetch("http://127.0.0.1:8001/restaurants", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -87,7 +87,7 @@ class Restaurant extends React.Component {
     this.setState({ status: this.state.status });
     const fd = new FormData();
     fd.append("status", this.state.status);
-    axios.put("http://127.0.0.1:8000/restaurants/" + resId, fd).then((res) => {
+    axios.put("http://127.0.0.1:8001/restaurants/" + resId, fd).then((res) => {
       console.log(res);
     });
 
@@ -99,7 +99,7 @@ class Restaurant extends React.Component {
 
   // componentWillMount() {
   //   this.setState({loading:true});
-  //     fetch("http://localhost:8000/restaurants")
+  //     fetch("http://localhost:8001/restaurants")
   //       .then((res) => res.text())
   //       .then((res) => this.setState({ apiRestaurants: res.restaurants ,loading:false}));
 
@@ -172,7 +172,7 @@ class Restaurant extends React.Component {
                   >
                     <img
                       className="card-img-top"
-                      src={`http://localhost:8000/${restaurant.img}`}
+                      src={`http://localhost:8001/${restaurant.img}`}
                       style={{
                         paddingLeft: "0px",
                         paddingRight: "9px",
@@ -315,7 +315,7 @@ class ViewDetails extends React.Component {
         <b> {this.res.name} </b>
         <br></br>
         <img
-          src={`http://localhost:8000/${this.res.img}`}
+          src={`http://localhost:8001/${this.res.img}`}
           style={{ width: "450px", height: "200px" }}
         />
         <br></br>

@@ -75,7 +75,7 @@ class Offers extends React.Component {
 
   async componentWillMount() {
     this.setState({ loading: true });
-    let res = await fetch("http://127.0.0.1:8000/restaurants", {
+    let res = await fetch("http://127.0.0.1:8001/restaurants", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -155,7 +155,7 @@ class Offers extends React.Component {
                     >
                       <img
                         className="card-img-top"
-                        src={`http://localhost:8000/${restaurant.img}`}
+                        src={`http://localhost:8001/${restaurant.img}`}
                         style={{
                           paddingLeft: "0px",
                           paddingRight: "9px",
@@ -286,7 +286,7 @@ class ViewOffers extends React.Component {
   async componentDidMount() {
     console.log("component did mount");
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/offer/" + this.props.resId,
+      "http://127.0.0.1:8001/restaurants/offer/" + this.props.resId,
       {
         method: "GET",
         headers: {
@@ -302,7 +302,7 @@ class ViewOffers extends React.Component {
   removeSelected=(offerId)=>{
     console.log(offerId);
      if (window.confirm('Are you sure?')){
-     fetch("http://127.0.0.1:8000/restaurants/offer/singleOffer/"+offerId, {
+     fetch("http://127.0.0.1:8001/restaurants/offer/singleOffer/"+offerId, {
        method: "DELETE",
        headers: {
         'Accept': "application/json",
@@ -334,7 +334,7 @@ class ViewOffers extends React.Component {
                     <div className="row">
                       <div className="col-6">
                         <img
-                          src={`http://localhost:8000/${singleOffer.img}`}
+                          src={`http://localhost:8001/${singleOffer.img}`}
                           style={{ width: "120px", height: "120px" }}
                         ></img>
                       

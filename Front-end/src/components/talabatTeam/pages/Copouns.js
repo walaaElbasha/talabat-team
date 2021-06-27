@@ -35,7 +35,7 @@ class Copouns extends React.Component {
   };
   async componentWillMount() {
     this.setState({ loading: true });
-    let res = await fetch("http://127.0.0.1:8000/restaurants", {
+    let res = await fetch("http://127.0.0.1:8001/restaurants", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -115,7 +115,7 @@ class Copouns extends React.Component {
                     >
                       <img
                         className="card-img-top"
-                        src={`http://localhost:8000/${restaurant.img}`}
+                        src={`http://localhost:8001/${restaurant.img}`}
                         style={{
                           paddingLeft: "0px",
                           paddingRight: "9px",
@@ -242,7 +242,7 @@ class ViewCopouns extends React.Component {
   async componentDidMount() {
     console.log("component did mount");
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/copoun/" + this.props.resId,
+      "http://127.0.0.1:8001/restaurants/copoun/" + this.props.resId,
       {
         method: "GET",
         headers: {
@@ -258,7 +258,7 @@ class ViewCopouns extends React.Component {
     console.log(copounId);
     if (window.confirm("Are you sure?")) {
       fetch(
-        "http://127.0.0.1:8000/restaurants/copoun/singleCopoun/" + copounId,
+        "http://127.0.0.1:8001/restaurants/copoun/singleCopoun/" + copounId,
         {
           method: "DELETE",
           headers: {

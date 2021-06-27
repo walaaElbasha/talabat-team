@@ -84,7 +84,7 @@ class NewOffer extends React.Component {
 
   async componentWillMount() {
     let res = await fetch(
-      "http://127.0.0.1:8000/restaurants/" + this.props.match.params.id,
+      "http://127.0.0.1:8001/restaurants/" + this.props.match.params.id,
       {
         method: "GET",
         headers: {
@@ -151,7 +151,7 @@ class NewOffer extends React.Component {
   // async addOfferToDB() {
    
   //   let res = await fetch(
-  //     "http://127.0.0.1:8000/restaurants/offer/",
+  //     "http://127.0.0.1:8001/restaurants/offer/",
 
   //     {
   //       method: "POST",
@@ -180,7 +180,7 @@ fd.append("desc", this.state.offerDesc);
 fd.append("price", this.state.offerPrice);
 fd.append("img", this.state.offerImg, this.state.offerImg.name);
 fd.append("restaurant", this.props.match.params.id);
-axios.post("http://127.0.0.1:8000/restaurants/offer",fd)
+axios.post("http://127.0.0.1:8001/restaurants/offer",fd)
 .then(res=>{
   console.log(res);
 });
