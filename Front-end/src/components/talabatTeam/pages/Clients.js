@@ -74,7 +74,7 @@ class Clients extends React.Component {
           },
         });
       }
-       window.location.href = " http://localhost:3000/clients";
+       window.location.href = "/clients";
   };
 
   async componentWillMount() {
@@ -122,7 +122,7 @@ class Clients extends React.Component {
       users: this.state.users,
     });
     console.log(this.state.status);
-    window.location.href = " http://localhost:3000/clients"
+    window.location.href = "/clients"
   }
 
 
